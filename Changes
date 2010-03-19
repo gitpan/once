@@ -1,4 +1,10 @@
 Revision history for Perl extension once
 
-0.01  2009-03-19T21:38:13Z (Marcel Gruenauer <marcel@cpan.org>)
+1.100790  2010-03-20 00:09:58 Europe/Vienna
+    - converted distribution to Dist::Zilla-style
+
+0.02  Fri Mar 20 09:03:21 CET 2009 (Marcel Gruenauer <marcel@cpan.org>)
+     - pod fixes (thanks Miyagawa Tatsuhiko)
+
+0.01  Fri Mar 19 21:38:13 CET 2009 (Marcel Gruenauer <marcel@cpan.org>)
      - original version

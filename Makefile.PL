@@ -1,18 +1,45 @@
-use inc::Module::Install;
-include 'Module::AutoInstall';
 
-name 'once';
-all_from 'lib/once.pm';
-perl_version '5.006';
+use strict;
+use warnings;
 
-homepage 'http://search.cpan.org/dist/once/';
-bugtracker 'http://rt.cpan.org/Public/Dist/Display.html?Name=once';
-repository 'http://github.com/hanekomu/once/tree/master';
+ BEGIN { require 5.008; } 
 
-test_requires 'Test::More' => '0.70';
-test_requires 'Test::Differences';
-extra_tests;
+use ExtUtils::MakeMaker 6.11;
 
-auto_install;
-auto_include;
-WriteAll;
+
+
+my %WriteMakefileArgs = (
+                       'test' => {
+                                   'TESTS' => 't/*.t'
+                                 },
+                       'NAME' => 'once',
+                       'DISTNAME' => 'once',
+                       'CONFIGURE_REQUIRES' => {
+                                                 'ExtUtils::MakeMaker' => '6.11'
+                                               },
+                       'AUTHOR' => 'Marcel Gruenauer <marcel@cpan.org>',
+                       'BUILD_REQUIRES' => {},
+                       'ABSTRACT' => 'execute code only once throughout the program\'s lifetime',
+                       'EXE_FILES' => [],
+                       'VERSION' => '1.100790',
+                       'PREREQ_PM' => {
+                                        'Test::More' => '0.88',
+                                        'Scalar::Util' => '0',
+                                        'Test::Differences' => '0',
+                                        'English' => '0',
+                                        'File::Find' => '0',
+                                        'File::Temp' => '0',
+                                        'Exporter' => '0',
+                                        'Carp' => '0'
+                                      },
+                       'LICENSE' => 'perl'
+                     );
+
+
+delete $WriteMakefileArgs{LICENSE}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.31) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+
+
