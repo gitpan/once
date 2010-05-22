@@ -3,9 +3,11 @@ use strict;
 use warnings;
 
 package once;
-our $VERSION = '1.100790';
+BEGIN {
+  $once::VERSION = '1.101420';
+}
 
-# ABSTRACT: execute code only once throughout the program's lifetime
+# ABSTRACT: Execute code only once throughout the program's lifetime
 use Exporter qw(import);
 our @EXPORT  = qw(ONCE);
 
@@ -25,11 +27,11 @@ __END__
 
 =head1 NAME
 
-once - execute code only once throughout the program's lifetime
+once - Execute code only once throughout the program's lifetime
 
 =head1 VERSION
 
-version 1.100790
+version 1.101420
 
 =head1 SYNOPSIS
 
@@ -50,7 +52,7 @@ surrounding code is called.
 
 =head1 METHODS
 
-=head2 C<ONCE>
+=head2 ONCE
 
 This subroutine is exported automatically. It takes a code block and executes
 it only the first time that this specific call of C<ONCE> is encountered. This
@@ -87,7 +89,7 @@ and github infrastructure.
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Marcel Gruenauer.
+This software is copyright (c) 2009 by Marcel Gruenauer.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,5 +1,8 @@
 Revision history for Perl extension once
 
+1.101420  2010-05-22 18:26:47 Europe/Vienna
+    - standardized POD method documentation
+
 1.100790  2010-03-20 00:09:58 Europe/Vienna
     - converted distribution to Dist::Zilla-style
 

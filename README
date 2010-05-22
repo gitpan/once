@@ -1,8 +1,8 @@
 NAME
-    once - execute code only once throughout the program's lifetime
+    once - Execute code only once throughout the program's lifetime
 
 VERSION
-    version 1.100790
+    version 1.101420
 
 SYNOPSIS
         use once;
@@ -20,7 +20,7 @@ DESCRIPTION
     the surrounding code is called.
 
 METHODS
-  "ONCE"
+  ONCE
     This subroutine is exported automatically. It takes a code block and
     executes it only the first time that this specific call of "ONCE" is
     encountered. This might be useful, for example, in a situation where you
@@ -51,7 +51,7 @@ AUTHOR
       Marcel Gruenauer <marcel@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2010 by Marcel Gruenauer.
+    This software is copyright (c) 2009 by Marcel Gruenauer.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
